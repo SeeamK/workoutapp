@@ -1,0 +1,133 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- BottomNavigationView -->
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        app:menu="@menu/bottom_nav_menu" />
+
+    <!-- ScrollView to enable scrolling -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/bottom_navigation">
+
+        <!-- LinearLayout as a container for the views -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- Container for the workout GIF, ProgressBar, and FABs -->
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp">
+
+                <!-- ImageView for the workout GIF -->
+                <ImageView
+                    android:id="@+id/workout_gif"
+                    android:layout_width="match_parent"
+                    android:layout_height="350dp"
+                    android:adjustViewBounds="true"
+                    android:contentDescription="@string/todo"
+                    android:scaleType="centerCrop" />
+
+                <!-- ProgressBar centered on the ImageView -->
+                <ProgressBar
+                    android:id="@+id/progressBarInfo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:indeterminate="true"
+                    android:visibility="visible" />
+
+                <!-- FAB for adding to favorites -->
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/addToFavBtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="top|end"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="16dp"
+                    app:backgroundTint="#427D9D"
+                    app:srcCompat="@android:drawable/btn_star" />
+
+                <!-- FAB for adding to routine, with increased marginTop for spacing -->
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/addToRoutineBtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="top|end"
+                    android:layout_marginTop="96dp"
+                android:layout_marginEnd="16dp"
+                app:backgroundTint="#427D9D"
+                app:srcCompat="@android:drawable/ic_input_add" />
+
+                <!-- FAB for adding to routine, with increased marginTop for spacing -->
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/shareBtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom|left"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="16dp"
+                    app:backgroundTint="#427D9D"
+                    app:srcCompat="@android:drawable/ic_menu_share" />
+
+            </FrameLayout>
+
+            <!-- TextView for workout name -->
+            <TextView
+                android:id="@+id/wname"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:textSize="34sp"
+                android:text="Workout Name" />
+
+            <!-- TextView for workout target -->
+            <TextView
+                android:id="@+id/wtarget"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:textSize="24sp"
+                android:text="Workout Target" />
+
+            <!-- TextView for workout equipment -->
+            <TextView
+                android:id="@+id/wequipment"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:textSize="24sp"
+                android:text="Equipment Needed" />
+
+            <!-- TextView for workout instructions -->
+            <TextView
+                android:id="@+id/winstructions"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@string/instructions"
+                android:textSize="24sp" />
+
+            <!-- ListView for displaying a list of instructions -->
+            <!-- Consider replacing ListView with RecyclerView as ListView is outdated -->
+            <ListView
+                android:id="@+id/instructionList"
+                android:layout_width="wrap_content"
+                android:layout_height="172dp" />
+
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>

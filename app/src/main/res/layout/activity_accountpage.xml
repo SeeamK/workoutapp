@@ -1,0 +1,224 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#164863">
+
+    <!-- Your BottomNavigationView here -->
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        app:menu="@menu/bottom_nav_menu" />
+
+    <!-- Container for RecyclerViews and titles -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="760dp"
+        android:layout_above="@id/bottom_navigation"
+        android:layout_marginBottom="1dp"
+        android:background="#164863"
+        android:weightSum="2">
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/signoutBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"
+            android:clickable="true"
+            android:src="@drawable/baseline_logout_24"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <TextView
+            android:id="@+id/welcomeText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:fontFamily="@font/orbitron_medium"
+            android:text="Welcom Seeam Khan"
+            android:textAlignment="center"
+            android:textColor="#DDF2FD"
+            android:textSize="34sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/tuesBtn"
+            android:layout_width="192dp"
+            android:layout_height="61dp"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="3dp"
+            android:backgroundTint="#9BBEC8"
+            android:text="@string/tuesday"
+            android:textColor="#616161"
+            android:textSize="24sp"
+            app:layout_constraintEnd_toStartOf="@+id/wedBtn"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/favorites" />
+
+        <Button
+            android:id="@+id/wedBtn"
+            android:layout_width="192dp"
+            android:layout_height="61dp"
+            android:layout_marginStart="3dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="12dp"
+            android:backgroundTint="#9BBEC8"
+            android:text="@string/wednesday"
+            android:textColor="#616161"
+            android:textSize="24sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.629"
+            app:layout_constraintStart_toEndOf="@+id/tuesBtn"
+            app:layout_constraintTop_toBottomOf="@+id/monBtn" />
+
+        <Button
+            android:id="@+id/thursBtn"
+            android:layout_width="192dp"
+            android:layout_height="61dp"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="3dp"
+            android:backgroundTint="#9BBEC8"
+            android:text="@string/thursday"
+            android:textColor="#616161"
+            android:textSize="24sp"
+            app:layout_constraintEnd_toStartOf="@+id/fribtn"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tuesBtn" />
+
+        <Button
+            android:id="@+id/fribtn"
+            android:layout_width="192dp"
+            android:layout_height="61dp"
+            android:layout_marginStart="3dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="12dp"
+            android:backgroundTint="#9BBEC8"
+            android:text="@string/friday"
+            android:textColor="#616161"
+            android:textSize="24sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/thursBtn"
+            app:layout_constraintTop_toBottomOf="@+id/wedBtn" />
+
+        <Button
+            android:id="@+id/satBtn"
+            android:layout_width="192dp"
+            android:layout_height="61dp"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="3dp"
+            android:backgroundTint="#9BBEC8"
+            android:text="@string/saturday"
+            android:textColor="#616161"
+            android:textSize="24sp"
+            app:layout_constraintEnd_toStartOf="@+id/sunBtn"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/thursBtn" />
+
+        <Button
+            android:id="@+id/sunBtn"
+            android:layout_width="192dp"
+            android:layout_height="61dp"
+            android:layout_marginStart="3dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="12dp"
+            android:backgroundTint="#9BBEC8"
+            android:text="@string/sunday"
+            android:textColor="#616161"
+            android:textSize="24sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/satBtn"
+            app:layout_constraintTop_toBottomOf="@+id/fribtn" />
+
+        <Button
+            android:id="@+id/monBtn"
+            android:layout_width="192dp"
+            android:layout_height="61dp"
+            android:layout_marginStart="3dp"
+            android:layout_marginTop="220dp"
+            android:layout_marginEnd="12dp"
+            android:backgroundTint="#9BBEC8"
+            android:text="@string/monday"
+            android:textColor="#616161"
+            android:textSize="24sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/favorites"
+            app:layout_constraintTop_toBottomOf="@+id/welcomeText" />
+
+        <Button
+            android:id="@+id/favorites"
+            android:layout_width="192dp"
+            android:layout_height="61dp"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="220dp"
+            android:layout_marginEnd="3dp"
+            android:backgroundTint="#9BBEC8"
+            android:text="@string/favorites"
+            android:textColor="#616161"
+            android:textSize="24sp"
+            app:layout_constraintEnd_toStartOf="@+id/monBtn"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/welcomeText" />
+
+        <Switch
+            android:id="@+id/notificationSwitch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="19dp"
+            android:layout_marginBottom="20dp"
+            android:text="Allow Notifications"
+            android:textColor="#E6DFDF"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <ImageView
+            android:id="@+id/workoutGif"
+            android:layout_width="191dp"
+            android:layout_height="153dp"
+            app:layout_constraintBottom_toTopOf="@+id/favorites"
+            app:layout_constraintTop_toBottomOf="@+id/welcomeText"
+            tools:layout_editor_absoluteX="11dp" />
+
+        <TextView
+            android:id="@+id/workoutstdy"
+            android:layout_width="191dp"
+            android:layout_height="79dp"
+            android:layout_marginTop="72dp"
+            android:fontFamily="@font/orbitron_medium"
+            android:text="No workouts for today"
+            android:textAlignment="center"
+            android:textColor="#F4F0F0"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.444"
+            app:layout_constraintStart_toEndOf="@+id/workoutGif"
+            app:layout_constraintTop_toBottomOf="@+id/welcomeText" />
+
+        <ProgressBar
+            android:id="@+id/progressBar2"
+            style="?android:attr/progressBarStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="54dp"
+            android:layout_marginBottom="54dp"
+            app:layout_constraintBottom_toBottomOf="@+id/workoutGif"
+            app:layout_constraintEnd_toEndOf="@+id/workoutGif"
+            app:layout_constraintStart_toStartOf="@+id/workoutGif"
+            app:layout_constraintTop_toTopOf="@+id/workoutGif" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</RelativeLayout>

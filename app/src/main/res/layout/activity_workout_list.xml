@@ -1,0 +1,46 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- BottomNavigationView -->
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        app:menu="@menu/bottom_nav_menu" />
+
+    <!-- TextView for results -->
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/orbitron_medium"
+        android:gravity="center_horizontal"
+        android:text="@string/results"
+        android:textSize="34sp" />
+
+    <!-- RecyclerView for displaying results -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/resultsRecycler"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/textView3"
+        android:layout_above="@id/bottom_navigation"
+        android:background="#427D9D" />
+
+    <!-- ProgressBar centered within the RecyclerView bounds -->
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:visibility="gone"
+        android:layout_above="@id/bottom_navigation"
+        android:layout_below="@id/textView3" />
+
+</RelativeLayout>

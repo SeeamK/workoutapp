@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cardView"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="5dp"
+    app:cardBackgroundColor="@color/white"
+    app:cardCornerRadius="8dp"
+    app:cardElevation="8dp"
+    app:cardMaxElevation="10dp"
+    app:cardPreventCornerOverlap="true"
+    app:cardUseCompatPadding="true">
+
+    <!-- In the above cardview widget cardelevation property will give elevation to your card view
+        card corner radius will provide radius to your card view card background color will give
+        background color to your card view card max elevation will give the cardview maximum
+        elevation card prevent corner overlap will add padding to CardView on v20 and before to
+        prevent intersections between the Card content and rounded corners. Card use compact padding
+        will add padding in API v21+ as well to have the same measurements with previous versions -->
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/card_view_layout"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:layout_margin="8dp">
+
+        <!-- ImageVIew to display our Course Image -->
+        <ImageView
+            android:id="@+id/gif"
+            android:layout_width="79dp"
+            android:layout_height="101dp"
+            android:src="@mipmap/ic_launcher_round"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ProgressBar
+            android:id="@+id/gifProgressBar"
+            style="?android:attr/progressBarStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            app:layout_constraintStart_toStartOf="@id/gif"
+            app:layout_constraintTop_toTopOf="@id/gif"
+            app:layout_constraintEnd_toEndOf="@id/gif"
+            app:layout_constraintBottom_toBottomOf="@id/gif" />
+
+
+        <TextView
+            android:id="@+id/workout_name"
+            android:layout_width="274dp"
+            android:layout_height="28dp"
+            android:layout_marginStart="8dp"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Title"
+            app:layout_constraintStart_toEndOf="@id/gif"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Wname" />
+
+        <TextView
+            android:id="@+id/target"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="@id/workout_name"
+            app:layout_constraintTop_toBottomOf="@id/workout_name"
+            tools:text="wtarget" />
+
+        <TextView
+            android:id="@+id/equipment"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/workout_name"
+            app:layout_constraintTop_toBottomOf="@id/target"
+            tools:text="equipment" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/rmWorkout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:srcCompat="@drawable/baseline_delete_24"
+            tools:visibility="gone" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>
